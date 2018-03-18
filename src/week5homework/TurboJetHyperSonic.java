@@ -3,8 +3,8 @@ package week5homework;
 public class TurboJetHyperSonic extends TurboJet {
     @Override
     public void fly() {
-        this.hyperSonicFlight();
         super.fly();
+        this.hyperSonicFlight();
     }
 
     private void hyperSonicFlight() {

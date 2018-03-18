@@ -1,17 +1,19 @@
 package week5homework;
 
-public class PropellerDrivenAirplane extends Glider {
+public class PropellerDrivenAirplane extends Glider implements Engines {
     @Override
     public void fly() {
-        enginesOn();
+        turnOnEngines();
         super.fly();
-    }
-    private void enginesOn() {
-        System.out.println("Engines on!");
     }
 
     PropellerDrivenAirplane() {
         super();
         this.maxSpeed = 350;
+    }
+
+    @Override
+    public void turnOnEngines() {
+        System.out.println("Engines on!");
     }
 }
