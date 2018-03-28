@@ -5,15 +5,15 @@ import java.util.Collection;
 
 public class NotebookImpl implements Notebook {
 
-    private ArrayList<Contact> myNotebook;
+    private final ArrayList<Contact> myNotebook;
 
-    public NotebookImpl() {
+    NotebookImpl() {
         this.myNotebook = new ArrayList<>();
     }
 
     @Override
     public void addNewContact(Contact contact) {
-        if (isValidContact(contact)) {
+        if (isValidContact(contact) && !this.myNotebook.contains(contact)) {
             this.myNotebook.add(contact);
         }
     }
@@ -21,7 +21,6 @@ public class NotebookImpl implements Notebook {
     @Override
     public void deleteContact(Contact contact) {
         if (isValidContact(contact)) {
-            //needs to remove all elements based on criteria.
             this.myNotebook.remove(contact);
         }
     }
@@ -66,7 +65,7 @@ public class NotebookImpl implements Notebook {
         }
         ArrayList<Contact> tempArray = new ArrayList<>();
         for (Contact contact : this.myNotebook) {
-            if (contact.getPhoneNumber().equals(phoneNumberSearchString)) {
+            if (contact.getPhoneNumber().contains(phoneNumberSearchString)) {
                 tempArray.add(contact);
             }
         }

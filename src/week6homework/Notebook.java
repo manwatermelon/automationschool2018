@@ -2,7 +2,7 @@ package week6homework;
 
 import java.util.*;
 
-public interface Notebook {
+interface Notebook {
 
     void addNewContact(Contact contact);
 

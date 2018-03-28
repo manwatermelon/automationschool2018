@@ -3,9 +3,9 @@ package week6homework;
 import java.util.Objects;
 
 class Contact {
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+    private final String firstName;
+    private final String lastName;
+    private final String phoneNumber;
 
     Contact(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
@@ -13,15 +13,15 @@ class Contact {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getFirstName () {
+    String getFirstName() {
         return this.firstName;
     }
 
-    public String getLastName () {
-        return this.firstName;
+    String getLastName() {
+        return this.lastName;
     }
 
-    public String getPhoneNumber () {
+    String getPhoneNumber() {
         return this.phoneNumber;
     }
 
